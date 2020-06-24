@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha test/**/*.js -w",
-    "start": "node index.js"
+    "start": "node index.js",
+    "install-fe": "cd bin/wwww && npm install && cd ../../",
+    "build-fe":"cd bin/www && npm run build && cd ../../"
   },
   "author": "dinanjana",
   "license": "ISC",
@@ -13,6 +15,7 @@
     "axios": "^0.19.2",
     "body-parser": "^1.19.0",
     "chai": "^4.2.0",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "lodash": "^4.17.15",
     "minio": "^7.0.16",
@@ -21,7 +24,6 @@
     "winston": "^3.3.3"
   },
   "devDependencies": {
-    "@types/minio": "^7.0.5",
     "sinon": "^9.0.2"
   }
 }

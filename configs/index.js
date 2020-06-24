@@ -1,5 +1,5 @@
 module.exports = {
-  SERVER_PORT: 3000,
+  SERVER_PORT: 3001,
   MONGODB_URI_FEEDBACK: 'mongodb+srv://feddback:f33dback@feedback-jgfh3.mongodb.net/feedback?retryWrites=true&w=majority',
   FEEDBACK_DB: 'feedBacks',
   FEEDBACK_COLLECTION: 'feedBacks',
