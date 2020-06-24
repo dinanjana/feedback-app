@@ -1,5 +1,5 @@
 const Minio = require('minio');
-const config = require('../../../configs');
+const config = require('../../../../configs/index');
 
 const minioClient = new Minio.Client({
     endPoint: config.MINIO_URL,

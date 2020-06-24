@@ -1,8 +1,8 @@
 const expect  = require('chai').expect;
 const sinon = require("sinon");
 
-const feedbackService = require('../../service/feedback');
-const feedbackDAO = require('../../repository/feedback');
+const feedbackService = require('../../ws/service/feedback');
+const feedbackDAO = require('../../ws/repository/feedback');
 
 describe('addFeedback', () => {
     const fakePostFeedback = sinon.fake.resolves({ id: '1'});

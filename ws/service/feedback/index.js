@@ -1,4 +1,4 @@
-const feedbackDAO = require('../../repository/feedback');
+const feedbackDAO = require('../../repository/feedback/index');
 
 const getFeedbacks = () => feedbackDAO.getFeedbacks();
 

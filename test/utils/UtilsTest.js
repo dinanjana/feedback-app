@@ -1,6 +1,6 @@
 const expect  = require('chai').expect;
 const sinon = require("sinon");
-const utils = require('../../utils');
+const utils = require('../../ws/utils');
 
 describe('registerHandlers', () => {
 

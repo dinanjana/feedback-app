@@ -1,5 +1,5 @@
 const _ = require('lodash');
-const logger = require('../service/log').logger;
+const logger = require('../service/log/index').logger;
 
 const registerHandlers = (app, handlers) =>
     _.map(handlers, ({ path, handlers}) => {

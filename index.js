@@ -2,12 +2,12 @@ const express = require('express');
 const BodyParser = require('body-parser');
 
 const configs = require('./configs');
-const feedbackHandlers = require('./handler/feedback').handlers;
-const utils = require('./utils');
-const loggerService = require('./service/log');
-const feedbackService = require('./service/feedback');
+const feedbackHandlers = require('./ws/handler/feedback').handlers;
+const utils = require('./ws/utils');
+const loggerService = require('./ws/service/log');
+const feedbackService = require('./ws/service/feedback');
 
-const mongoConnector = require('./repository/connectors/mongodb');
+const mongoConnector = require('./ws/repository/connectors/mongodb');
 
 const logger = loggerService.logger;
 const app = express();

@@ -1,6 +1,6 @@
-const feedbacksService = require('../../service/feedback');
-const logger = require('../../service/log').logger;
-const config = require('../../configs');
+const feedbacksService = require('../../service/feedback/index');
+const logger = require('../../service/log/index').logger;
+const config = require('../../../configs/index');
 
 const handlers = [{
     path: '/feedbacks',

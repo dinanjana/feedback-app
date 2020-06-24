@@ -1,4 +1,4 @@
-const minioClient = require('../connectors/minio').minioClient;
+const minioClient = require('../connectors/minio/index').minioClient;
 
 const uploadLogFiles = async (fileLocation, name) => {
     const metaData = {

@@ -1,6 +1,6 @@
 const ObjectId = require("mongodb").ObjectID;
-const client = require('../connectors/mongodb').client;
-const configs = require('../../configs');
+const client = require('../connectors/mongodb/index').client;
+const configs = require('../../../configs/index');
 
 const getFeedbacks = () => client.conn.db(configs.FEEDBACK_DB).collection(configs.FEEDBACK_COLLECTION).find().toArray();
 

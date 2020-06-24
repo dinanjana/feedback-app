@@ -1,6 +1,6 @@
 const { MongoClient } = require('mongodb');
-const logger = require('../../../service/log').logger;
-const uri = require('../../../configs').MONGODB_URI_FEEDBACK;
+const logger = require('../../../service/log/index').logger;
+const uri = require('../../../../configs/index').MONGODB_URI_FEEDBACK;
 
 const client = {};
 

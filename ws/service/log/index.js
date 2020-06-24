@@ -1,5 +1,5 @@
 const winston = require('winston');
-const logDAO = require('../../repository/log');
+const logDAO = require('../../repository/log/index');
 
 const errorLogFile = 'logs/error.log';
 const combinedLogFile = 'logs/combined.log';
