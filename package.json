@@ -8,6 +8,7 @@
     "start": "node index.js",
     "install-fe": "cd bin/www && npm install && cd ../../",
     "build-fe":"cd bin/www && npm run build && cd ../../",
+    "build-feedback-app": "npm run install-fe && npm run build-fe",
     "feedback-app": "npm run install-fe && npm run build-fe && npm start"
   },
   "author": "dinanjana",

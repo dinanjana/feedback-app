@@ -8,9 +8,7 @@ RUN npm install
 
 COPY . .
 
-RUN npm run install-fe
-
-RUN npm run build-fe
+RUN npm run build-feedback-app
 
 EXPOSE 3001
 
