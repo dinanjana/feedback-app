@@ -1,6 +1,10 @@
 const Minio = require('minio');
 const config = require('../../../../configs/index');
 
+/**
+ * Initialize and create a minio connection
+ * */
+
 const minioClient = new Minio.Client({
     endPoint: config.MINIO_URL,
     port: config.MINIO_PORT,

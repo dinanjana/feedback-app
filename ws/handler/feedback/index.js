@@ -5,6 +5,9 @@ const config = require('../../../configs/index');
 const handlers = [{
     path: '/feedbacks',
     handlers: {
+        /**
+         * Get all feedbacks
+         * */
         'get': async (req, res) => {
             try {
                 const result = await feedbacksService.getFeedbacks();
@@ -14,6 +17,10 @@ const handlers = [{
                 return res.status(500).send(config.INTERNAL_SERVER_ERRO_MSG);
             }
         },
+
+        /**
+         * Add a feedback
+         * */
         'post': async (req, res) => {
             try {
                 const result = await feedbacksService.addFeedback(req.body);

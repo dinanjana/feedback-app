@@ -6,8 +6,9 @@
   "scripts": {
     "test": "mocha test/**/*.js -w",
     "start": "node index.js",
-    "install-fe": "cd bin/wwww && npm install && cd ../../",
-    "build-fe":"cd bin/www && npm run build && cd ../../"
+    "install-fe": "cd bin/www && npm install && cd ../../",
+    "build-fe":"cd bin/www && npm run build && cd ../../",
+    "feedback-app": "npm run install-fe && npm run build-fe && npm start"
   },
   "author": "dinanjana",
   "license": "ISC",

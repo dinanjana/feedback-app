@@ -2,6 +2,9 @@ const { MongoClient } = require('mongodb');
 const logger = require('../../../service/log/index').logger;
 const uri = require('../../../../configs/index').MONGODB_URI_FEEDBACK;
 
+/**
+ * Initialize and create a connection to mongo db
+ * */
 const client = {};
 
 const init = async () => {
