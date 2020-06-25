@@ -4,9 +4,9 @@
   "description": "A simple Js application which collects and show feedback from people",
   "main": "index.js",
   "scripts": {
-    "test": "mocha test/**/*.js -w",
+    "test": "mocha ws/test/**/*.js -w",
     "test-ui": "cd bin/www && npm run test -- --watchAll=false && cd ../../",
-    "unit-tests": "mocha test/**/*.js && npm run test-ui",
+    "unit-tests": "mocha ws/test/**/*.js && npm run test-ui",
     "start": "node index.js",
     "install-fe": "cd bin/www && npm install && cd ../../",
     "build-fe":"cd bin/www && npm run build && cd ../../",

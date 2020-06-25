@@ -23,13 +23,18 @@ Node js and React js implemetation of feedback collecting service
 4. Go to `http://localhost:3001/feedback-list/index.html`
 
 ## Tests
-To run tests from project dir run `npm run test`
+### Tests of API
+Run `npm run test`
+### Tests of UI
+Run `npm run test-ui`
+### Test all
+Run `npm run unit-tests`
 
 ## Get the image from docker hub
 
 To pull the latest image from docker hub run
 `docker pull dinanjanag/feedback-app`
-Docker push CI job is configured to github.
+Docker push CI job is configured in github.
 https://github.com/dinanjana/feedback-app/blob/master/.github/workflows/docker-image.yml
 
 ## API
@@ -63,3 +68,23 @@ https://github.com/dinanjana/feedback-app/blob/master/.github/workflows/docker-i
     "name": "zczxc"
 }
 ```
+## Project structure
+ 
+ |bin  
+ |____|www  
+ |_______|_____build  
+ |______|_____public  ---> _UI app static resources_  
+ |_______|_____src  ---> _UI app_  
+ |  
+ |configs  
+ |  
+ |logs  
+ |
+ |ws  ---> _backend service_    
+ |____|test  ---> _backend service unit tests_  
+ 
+## Third party services
+Logs are stored in logs bucket of https://play.min.io/minio/ Get the default creds from here https://docs.min.io/docs/javascript-client-quickstart-guide.html
+
+Feedbacks are stored in mongodb atlas instance
+https://cloud.mongodb.com/v2/5eec3f9d5638bc560d23e72c#metrics/replicaSet/5eec40286d64ba1c058314dd/explorer/feedBacks/feedBacks
