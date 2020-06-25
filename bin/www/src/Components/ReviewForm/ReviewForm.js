@@ -26,7 +26,7 @@ const ReviewForm = (props) => {
                         rating={stars}
                         enterRating={enterRating}
                     />
-                    <Button bsStyle="primary" bsSize="small" onClick={() => saveAndReload(feedback, stars, name)}>Save
+                    <Button variant="primary" type="submit" onClick={() => saveAndReload(feedback, stars, name)}>Save
                         review</Button>
                 </Col>
             </Row>

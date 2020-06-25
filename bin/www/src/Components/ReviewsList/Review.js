@@ -3,7 +3,7 @@ import {ListGroupItem,} from 'react-bootstrap';
 import Button from '@material-ui/core/Button';
 import StarRatingComponent from 'react-star-rating-component';
 
-const Review = ({feedBack, stars, name, id, select, deleteReview, selected}) => {
+const Review = ({ feedBack, stars, name, id, select }) => {
     return (
         <ListGroupItem onClick={() => select(id)}>
             <p>{name}</p> says
@@ -13,7 +13,6 @@ const Review = ({feedBack, stars, name, id, select, deleteReview, selected}) => 
                 value={stars}
                 editing={false}
             />
-            <Button disabled={selected !== id} onClick={() => deleteReview(id)}>Delete</Button>
         </ListGroupItem>
     )
 };

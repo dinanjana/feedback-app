@@ -22,11 +22,19 @@ Node js and React js implemetation of feedback collecting service
 3. Use `npm run feedback-app` to start the complete application
 4. Go to `http://localhost:3001/feedback-list/index.html`
 
-##Get the image from docker hub
+## Tests
+To run tests from project dir run `npm run test`
 
-##API
+## Get the image from docker hub
 
-###GET /feedbacks
+To pull the latest image from docker hub run
+`docker pull dinanjanag/feedback-app`
+Docker push CI job is configured to github.
+https://github.com/dinanjana/feedback-app/blob/master/.github/workflows/docker-image.yml
+
+## API
+
+### GET /feedbacks
 
 
 ```json

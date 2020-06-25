@@ -34,21 +34,13 @@ const getReviews = async () => {
     return makeReq('GET', BASE_URL);
 };
 
-const deleteReviews = async () => {
-};
-
 const saveReview = async (feedback, stars, name) => {
     const lastId = await getReviews().then(reviews => _.chain(reviews).sortBy('id').last().id);
     return makeReq('POST', BASE_URL, {feedback, stars, id: lastId + 1, name});
 };
 
-const deleteReview = async (id) => {
-    return makeReq('DELETE', `${BASE_URL}/${id}`);
-};
 
 export {
     getReviews,
-    deleteReviews,
     saveReview,
-    deleteReview,
 }

@@ -225,3 +225,41 @@
 {"message":"Registering handler for post in /feedbacks","level":"info"}
 {"message":"Connecting to mongo db","level":"info"}
 {"message":"feedback ws listening at http://localhost:3001","level":"info"}
+{"message":"Registering handler for get in /feedbacks","level":"info"}
+{"message":"Registering handler for post in /feedbacks","level":"info"}
+{"message":"Connecting to mongo db","level":"info"}
+{"message":"feedback ws listening at http://localhost:3001","level":"info"}
+{"message":"Registering handler for get in /feedbacks","level":"info"}
+{"message":"Registering handler for post in /feedbacks","level":"info"}
+{"message":"Connecting to mongo db","level":"info"}
+{"message":"feedback ws listening at http://localhost:3001","level":"info"}
+{"name":"MongoError","level":"error"}
+{"message":"Registering handler for get in /feedbacks","level":"info"}
+{"message":"Registering handler for post in /feedbacks","level":"info"}
+{"message":"Connecting to mongo db","level":"info"}
+{"message":"feedback ws listening at http://localhost:3001","level":"info"}
+{"name":"MongoError","level":"error"}
+{"message":"Registering handler for get in /feedbacks","level":"info"}
+{"message":"Registering handler for post in /feedbacks","level":"info"}
+{"message":"Connecting to mongo db","level":"info"}
+{"message":"feedback ws listening at http://localhost:3001","level":"info"}
+{"message":"Registering handler for get in /feedbacks","level":"info"}
+{"message":"Registering handler for post in /feedbacks","level":"info"}
+{"message":"Connecting to mongo db","level":"info"}
+{"message":"feedback ws listening at http://localhost:3001","level":"info"}
+{"message":"Registering handler for get in /feedbacks","level":"info"}
+{"message":"Registering handler for post in /feedbacks","level":"info"}
+{"message":"Connecting to mongo db","level":"info"}
+{"message":"feedback ws listening at http://localhost:3001","level":"info"}
+{"message":"Registering handler for get in /feedbacks","level":"info"}
+{"message":"Registering handler for post in /feedbacks","level":"info"}
+{"message":"Connecting to mongo db","level":"info"}
+{"message":"feedback ws listening at http://localhost:3001","level":"info"}
+{"message":"Registering handler for get in /feedbacks","level":"info"}
+{"message":"Registering handler for post in /feedbacks","level":"info"}
+{"message":"Connecting to mongo db","level":"info"}
+{"message":"feedback ws listening at http://localhost:3001","level":"info"}
+{"message":"Registering handler for get in /feedbacks","level":"info"}
+{"message":"Registering handler for post in /feedbacks","level":"info"}
+{"message":"Connecting to mongo db","level":"info"}
+{"message":"feedback ws listening at http://localhost:3001","level":"info"}

@@ -17,7 +17,7 @@ const ReviewBody = ({feedback, name, enterReview, enterName}) => {
             <Form.Label>Feedback</Form.Label>
             <Form.Control as="textarea" rows="3" placeholder={feedbackPlaceHolder} style={styles.textarea}
                           value={feedback} onChange={evt => enterReview(evt.target.value)}/>
-            <Form.Control as="textarea" rows="1" placeholder={namePlaceHolder} style={styles.textarea} value={name}
+            <Form.Control type="text" size="sm" placeholder={namePlaceHolder} style={styles.textarea} value={name}
                           onChange={evt => enterName(evt.target.value)} required/>
         </Form.Group>
     );

@@ -9,7 +9,7 @@
     "install-fe": "cd bin/www && npm install && cd ../../",
     "build-fe":"cd bin/www && npm run build && cd ../../",
     "build-feedback-app": "npm run install-fe && npm run build-fe",
-    "feedback-app": "npm run install-fe && npm run build-fe && npm start"
+    "feedback-app": "npm run build-feedback-app && npm start"
   },
   "author": "dinanjana",
   "license": "ISC",

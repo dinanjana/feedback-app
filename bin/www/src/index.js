@@ -5,7 +5,7 @@ import App from './App'
 import Reviews from './Store/Reviews';
 import {loadReviews} from './Actions';
 
-Reviews.dispatch(loadReviews(false, true));
+setTimeout(() => Reviews.dispatch(loadReviews(false, true)), 1000);
 
 window.store = () => Reviews.getState();
 

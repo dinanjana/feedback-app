@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import {getReviews, deleteReview, saveReview} from '../Repository/Review';
+import {getReviews, saveReview} from '../Repository/Review';
 import {
     LOAD_REVIEWS,
     SELECT_REVIEW,
@@ -15,7 +15,7 @@ import {
 const loadReviews = (next, initiate = false) => ({
     type: LOAD_REVIEWS,
     payload: getReviews()
-        .then(data => ({next, initiate, data: _.orderBy(data, ['id'], ['desc'])}))
+        .then(data => ({next, initiate, data: _.orderBy(data, ['_id'], ['desc'])}))
         .catch(e => ({error: e})),
 });
 
@@ -48,7 +48,9 @@ const saveReviewInDB = (feedback, stars, name) => {
 
 const saveAndReloadReviewList = (dispatch, feedback, stars, name) => {
     dispatch(saveReviewInDB(feedback, stars, name));
-    dispatch(loadReviews(false, true))
+    setTimeout(() => {
+        dispatch(loadReviews(false, true));
+    }, 1000)
 };
 
 const selectReview = (id) => ({
@@ -56,17 +58,6 @@ const selectReview = (id) => ({
     payload: {id},
 });
 
-const deleteReviewInDB = (id) => ({
-    type: DELETE_REVIEW,
-    payload: deleteReview(id)
-        .then(data => ({data}))
-        .catch(e => ({error: e})),
-});
-
-const deleteReviewAndReload = (dispatch, id) => {
-    dispatch(deleteReviewInDB(id));
-    dispatch(loadReviews(false, true));
-};
 
 const cleanMessages = () => ({
     type: CLEAN_MESSAGES,
@@ -79,7 +70,6 @@ export {
     enterRating,
     saveReviewInDB,
     selectReview,
-    deleteReviewAndReload,
     saveAndReloadReviewList,
     cleanMessages,
     enterName
