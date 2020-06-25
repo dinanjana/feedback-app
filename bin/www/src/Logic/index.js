@@ -1,4 +1,4 @@
-import {MAX_NUMBER_OF_REVIEWS} from '../Constants';
+import { MAX_NUMBER_OF_REVIEWS } from '../Constants';
 
 const getNextIndex = (length, currIndex, initiate = false, next = true) => {
     let index;
@@ -12,7 +12,7 @@ const getNextIndex = (length, currIndex, initiate = false, next = true) => {
         if (index + 1 > length)
             index = currIndex;
     } else {
-        index = index === 0 ? 0 : currIndex - MAX_NUMBER_OF_REVIEWS;
+        index = currIndex === 0 ? 0 : currIndex - MAX_NUMBER_OF_REVIEWS;
     }
     return index;
 };

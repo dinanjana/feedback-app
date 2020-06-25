@@ -3,7 +3,6 @@ import {getReviews, saveReview} from '../Repository/Review';
 import {
     LOAD_REVIEWS,
     SELECT_REVIEW,
-    DELETE_REVIEW,
     SAVE_REVIEW,
     ENTER_REVIEW,
     ENTER_RATING,

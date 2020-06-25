@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha test/**/*.js -w",
-    "unit-tests": "mocha test/**/*.js",
+    "test-ui": "cd bin/www && npm run test -- --watchAll=false && cd ../../",
+    "unit-tests": "mocha test/**/*.js && npm run test-ui",
     "start": "node index.js",
     "install-fe": "cd bin/www && npm install && cd ../../",
     "build-fe":"cd bin/www && npm run build && cd ../../",
