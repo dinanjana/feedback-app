@@ -1,5 +1,5 @@
 import React from 'react'
-import { Form } from 'react-bootstrap'
+import {Form} from 'react-bootstrap'
 
 const styles = {
     textarea: {
@@ -8,14 +8,18 @@ const styles = {
     },
 };
 
-const placeholderText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.';
+const feedbackPlaceHolder = 'Feedback goes here';
+const namePlaceHolder = 'Name goes here';
 
-const ReviewBody = ({ body, enterReview }) => {
+const ReviewBody = ({feedback, name, enterReview, enterName}) => {
     return (
-      <Form.Group controlId="formControlsTextarea">
-        <Form.Label>Body</Form.Label>
-        <Form.Control as="textarea" rows="3" placeholder={placeholderText} style={styles.textarea} value={body} onChange={(evt) => enterReview(evt.target.value)} />
-      </Form.Group>
+        <Form.Group controlId="formControlsTextarea">
+            <Form.Label>Feedback</Form.Label>
+            <Form.Control as="textarea" rows="3" placeholder={feedbackPlaceHolder} style={styles.textarea}
+                          value={feedback} onChange={evt => enterReview(evt.target.value)}/>
+            <Form.Control as="textarea" rows="1" placeholder={namePlaceHolder} style={styles.textarea} value={name}
+                          onChange={evt => enterName(evt.target.value)} required/>
+        </Form.Group>
     );
 };
 

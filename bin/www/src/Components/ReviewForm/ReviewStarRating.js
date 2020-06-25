@@ -1,5 +1,5 @@
 import React from 'react'
-import { Form } from 'react-bootstrap'
+import {Form} from 'react-bootstrap'
 import StarRatingComponent from 'react-star-rating-component';
 
 const styles = {
@@ -13,7 +13,7 @@ const styles = {
     https://github.com/voronianski/react-star-rating-component
 */
 
-const ReviewStarRating = ({ rating, enterRating }) => {
+const ReviewStarRating = ({rating, enterRating}) => {
 
     const onStarClick = (nextValue, prevValue) => {
         enterRating(nextValue);
@@ -21,16 +21,16 @@ const ReviewStarRating = ({ rating, enterRating }) => {
     };
 
     return (
-      <Form.Group>
-        <Form.Label style={styles.label}>
-          Rating
-        </Form.Label>
-        <StarRatingComponent
-          name="star-rating"
-          value={rating}
-          onStarClick={onStarClick}
-        />
-      </Form.Group>
+        <Form.Group>
+            <Form.Label style={styles.label}>
+                Rating
+            </Form.Label>
+            <StarRatingComponent
+                name="star-rating"
+                value={rating}
+                onStarClick={onStarClick}
+            />
+        </Form.Group>
     );
 };
 

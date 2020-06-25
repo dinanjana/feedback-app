@@ -1,33 +1,36 @@
 import React from 'react'
-import { Button, Col, Row } from 'react-bootstrap'
+import {Button, Col, Row} from 'react-bootstrap'
 import ReviewStarRating from './ReviewStarRating'
 import ReviewBody from './ReviewBody'
 
 const styles = {
     wrapper: {
-        paddingBottom:'20px',
-        borderBottom:'1px solid grey'
+        paddingBottom: '20px',
+        borderBottom: '1px solid grey'
     }
 };
 
 const ReviewForm = (props) => {
-  const { body, rating, saveAndReload, enterRating, enterReview } = props;
+    const {feedback, name, stars, saveAndReload, enterRating, enterReview, enterName} = props;
     return (
-      <div style={styles.wrapper}>
-        <Row>
-          <Col md={12}>
-            <ReviewBody
-                body={body}
-                enterReview={enterReview}
-            />
-            <ReviewStarRating
-                rating={rating}
-                enterRating={enterRating}
-            />
-            <Button bsStyle="primary" bsSize="small" onClick={() => saveAndReload(body, rating)}>Save review</Button>
-          </Col>
-        </Row>
-      </div>
+        <div style={styles.wrapper}>
+            <Row>
+                <Col md={12}>
+                    <ReviewBody
+                        feedback={feedback}
+                        enterReview={enterReview}
+                        name={name}
+                        enterName={enterName}
+                    />
+                    <ReviewStarRating
+                        rating={stars}
+                        enterRating={enterRating}
+                    />
+                    <Button bsStyle="primary" bsSize="small" onClick={() => saveAndReload(feedback, stars, name)}>Save
+                        review</Button>
+                </Col>
+            </Row>
+        </div>
     );
 };
 

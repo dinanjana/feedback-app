@@ -1,83 +1,87 @@
-/**
- * Created by dinanjanag on 8/5/19.
- */
 import _ from 'lodash';
-import { getReviews, deleteReview, saveReview } from '../Repository/Review';
+import {getReviews, deleteReview, saveReview} from '../Repository/Review';
 import {
-  LOAD_REVIEWS,
-  SELECT_REVIEW,
-  DELETE_REVIEW,
-  SAVE_REVIEW,
-  ENTER_REVIEW,
-  ENTER_RATING,
-  CLEAN_MESSAGES,
+    LOAD_REVIEWS,
+    SELECT_REVIEW,
+    DELETE_REVIEW,
+    SAVE_REVIEW,
+    ENTER_REVIEW,
+    ENTER_RATING,
+    ENTER_NAME,
+    CLEAN_MESSAGES,
 } from '../Events';
 
 
 const loadReviews = (next, initiate = false) => ({
-  type: LOAD_REVIEWS,
-  payload: getReviews()
-    .then(data => ({ next, initiate, data: _.sortBy(data, 'id') }))
-    .catch(e => ({error: e})),
+    type: LOAD_REVIEWS,
+    payload: getReviews()
+        .then(data => ({next, initiate, data: _.orderBy(data, ['id'], ['desc'])}))
+        .catch(e => ({error: e})),
 });
 
-const enterReview = (body) => ({
-  type: ENTER_REVIEW,
-  payload: { body },
+const enterReview = feedback => ({
+    type: ENTER_REVIEW,
+    payload: {feedback},
 });
 
-const enterRating = (rating) => ({
-  type: ENTER_RATING,
-  payload: { rating },
+const enterName = name => ({
+    type: ENTER_NAME,
+    payload: {name}
 });
 
-const saveReviewInDB = (body, rating) => {
-  const isValid = body !== '' && rating !== 0;
-  const payload = { type: SAVE_REVIEW, payload: {} };
-  if (isValid) {
-    payload.payload = saveReview(body, rating);
-    return payload;
-  } else {
-    payload.payload.error = 'Review or rating is empty';
-    return payload;
-  }
+const enterRating = stars => ({
+    type: ENTER_RATING,
+    payload: {stars},
+});
+
+const saveReviewInDB = (feedback, stars, name) => {
+    const isValid = feedback !== '' && stars !== 0 && name !== '';
+    const payload = {type: SAVE_REVIEW, payload: {}};
+    if (isValid) {
+        payload.payload = saveReview(feedback, stars, name);
+        return payload;
+    } else {
+        payload.payload.error = 'Review or name or rating is empty';
+        return payload;
+    }
 };
 
-const saveAndReloadReviewList = (dispatch, body, rating) => {
-  dispatch(saveReviewInDB(body, rating));
-  dispatch(loadReviews(false, true))
+const saveAndReloadReviewList = (dispatch, feedback, stars, name) => {
+    dispatch(saveReviewInDB(feedback, stars, name));
+    dispatch(loadReviews(false, true))
 };
 
 const selectReview = (id) => ({
-  type: SELECT_REVIEW,
-  payload: {id},
+    type: SELECT_REVIEW,
+    payload: {id},
 });
 
 const deleteReviewInDB = (id) => ({
-  type: DELETE_REVIEW,
-  payload: deleteReview(id)
-  .then(data => ({ data }))
-  .catch(e => ({ error: e })),
+    type: DELETE_REVIEW,
+    payload: deleteReview(id)
+        .then(data => ({data}))
+        .catch(e => ({error: e})),
 });
 
 const deleteReviewAndReload = (dispatch, id) => {
-  dispatch(deleteReviewInDB(id));
-  dispatch(loadReviews(false, true));
+    dispatch(deleteReviewInDB(id));
+    dispatch(loadReviews(false, true));
 };
 
 const cleanMessages = () => ({
-  type: CLEAN_MESSAGES,
-  payload: {},
+    type: CLEAN_MESSAGES,
+    payload: {},
 });
 
 export {
-  loadReviews,
-  enterReview,
-  enterRating,
-  saveReviewInDB,
-  selectReview,
-  deleteReviewAndReload,
-  saveAndReloadReviewList,
-  cleanMessages,
+    loadReviews,
+    enterReview,
+    enterRating,
+    saveReviewInDB,
+    selectReview,
+    deleteReviewAndReload,
+    saveAndReloadReviewList,
+    cleanMessages,
+    enterName
 }
 
