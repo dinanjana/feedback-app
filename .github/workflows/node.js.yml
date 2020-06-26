@@ -25,4 +25,5 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm install
+    - run: cd bin/www && npm install cd ../../  
     - run: npm run unit-tests
