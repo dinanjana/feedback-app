@@ -2,7 +2,7 @@ import React from 'react';
 import ReviewsListView from './Views/ReviewsListView';
 import ReviewFormView from './Views/ReviewFormView';
 import ButtonsComp from './Views/ButtonsView';
-import {Col, Row} from 'react-bootstrap';
+import { Col, Row } from 'react-bootstrap';
 import MessageView from "./Views/MessageView";
 
 function styles() {

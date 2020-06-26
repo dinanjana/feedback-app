@@ -1,5 +1,5 @@
 import Button from '@material-ui/core/Button';
-import {Col, Row} from 'react-bootstrap';
+import { Col, Row } from 'react-bootstrap';
 import React from 'react'
 
 const ButtonComp = ({page, total, move, backButtonDisabled}) => {
